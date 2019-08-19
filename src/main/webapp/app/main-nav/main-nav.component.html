@@ -1,8 +1,13 @@
+<!--
+
+
+
+
 
 <mat-sidenav-container class="sidenav-container">
 
 
-    <!-- debut code du  side nav-->
+    &lt;!&ndash; debut code du  side nav&ndash;&gt;
 
     <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
     <mat-toolbar>Choisissez une zone</mat-toolbar>
@@ -18,7 +23,7 @@
 
         <p>Informations de la zone</p>
 
-        <!-- code du tableau-->
+        &lt;!&ndash; code du tableau&ndash;&gt;
         <cdk-virtual-scroll-viewport itemSize="100" class="container" >
             <ul>
                 <li> Nom Zone: {{ zone?.nomzone}}</li>
@@ -33,7 +38,7 @@
                 </li>
             </ul>
 
-            <!--<mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="classtable">
+            &lt;!&ndash;<mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="classtable">
                 &lt;!&ndash; Propriete Column &ndash;&gt;
                 <ng-container matColumnDef="nomzone"  >
                     <mat-header-cell *matHeaderCellDef> Nom Zone </mat-header-cell>
@@ -58,7 +63,7 @@
 
                 <mat-header-row *matHeaderRowDef="displayedColumns ; sticky: true"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            </mat-table>-->
+            </mat-table>&ndash;&gt;
 
         </cdk-virtual-scroll-viewport>
 
@@ -66,16 +71,16 @@
         <button> Modifier </button> <button>Télécharger</button> <button>Partager</button>
 
         </div>
-        <!-- fin code tableau-->
+        &lt;!&ndash; fin code tableau&ndash;&gt;
 
     </mat-sidenav>
 
 
-    <!-- fin code du side nav-->
+    &lt;!&ndash; fin code du side nav&ndash;&gt;
 
 
 
-    <!-- debut bar de menu -->
+    &lt;!&ndash; debut bar de menu &ndash;&gt;
     <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
@@ -88,15 +93,14 @@
       </button>
       <span>appli atos</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    &lt;!&ndash; Add Content Here &ndash;&gt;
       <ng-content></ng-content>
   </mat-sidenav-content>
 
-    <!-- fin bar de menu-->
+    &lt;!&ndash; fin bar de menu&ndash;&gt;
 
 
 </mat-sidenav-container>
 
 
-
-
+-->

@@ -82,11 +82,22 @@ import { EditzoneComponent } from './editzone/editzone.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import {NgxSocialButtonModule} from "ngx-social-button";
+import {SocialServiceConfig} from "ngx-social-button";
 
+
+export function getAuthServiceConfigs() {
+  let config = new SocialServiceConfig()
+    .addFacebook("Your-Facebook-app-id")
+    .addGoogle("Your-Google-Client-Id")
+    .addLinkedIn("Your-LinkedIn-Client-Id");
+  return config;
+}
 
 @NgModule({
   imports: [
-
+    BrowserModule,
+    NgxSocialButtonModule,
     AngularFontAwesomeModule,
     A11yModule,
     CdkStepperModule,
@@ -147,7 +158,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatButtonModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    BrowserModule,
     NgxWebstorageModule.forRoot({ prefix: 'jhi', separator: '-' }),
     NgJhipsterModule.forRoot({
       // set below to true to make alerts look like toast
@@ -191,6 +201,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
+    },
+    {
+      provide: SocialServiceConfig,
+      useFactory: getAuthServiceConfigs
     },
     {
       provide: HTTP_INTERCEPTORS,

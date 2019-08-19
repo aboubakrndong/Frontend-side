@@ -4,6 +4,7 @@ import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import {CreatezoneComponent} from "app/createzone/createzone.component";
 import {EditzoneComponent} from "app/editzone/editzone.component";
+import {MainNavComponent} from "app/main-nav/main-nav.component";
 
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
@@ -25,6 +26,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'editzone',
           component: EditzoneComponent
         },
+
 
         ...LAYOUT_ROUTES
       ],

@@ -1,5 +1,4 @@
 
-
 <!-- code de la barre de recherche -->
 
 <nav class="navbar navbar-expand-lg navbar-light btn-success">
@@ -40,7 +39,6 @@
 
         <mat-form-field>
             <h5><strong> <mat-label>Zone: </mat-label></strong></h5>
-
             <mat-select [(value)]="selectedValue" (selectionChange)="getZoneById($event)">
                 <mat-option *ngFor="let zone of listzone" value="{{ zone.id }}">{{ zone.nomzone }}</mat-option>
             </mat-select>
@@ -106,15 +104,11 @@
                 <span class="d-none d-md-inline">Creerzone</span>
             </button>
 
-            <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
+            <button [routerLink]="['/share']" class="btn btn-info btn-sm">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>
                 <span class="d-none d-md-inline">editzone</span>
             </button>
-<!--
-      <button class="btn btn-primary btn-sm" (click)="ConvertDataToPdf()">
-          <fa-icon [icon]="'download'"></fa-icon>
-          <span class="d-none d-md-inline">Telecharger</span>
-      </button>-->
+
 
             <button class="btn btn-success btn-sm"
                 (click)="ConvertDataToPdf()">
@@ -123,7 +117,19 @@
             </button>
 
 
-             <button>Partager</button>
+            <button class="btn btn-outline-primary btn-sm"
+                    (click)="ShareData()">
+                <fa-icon [icon]="'envelope'" ></fa-icon>
+                <span class="d-none d-md-inline">Partager</span>
+            </button>
+
+
+            <button class="btn btn-outline-danger btn-sm"
+                    (click)="ShareWithEmail()">
+                <fa-icon [icon]="'envelope'" ></fa-icon>
+                <span class="d-none d-md-inline">envoi mailo</span>
+            </button>
+
 
         </div>
         <!-- fin code tableau-->
