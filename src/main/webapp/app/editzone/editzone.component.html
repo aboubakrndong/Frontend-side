@@ -1,0 +1,87 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1 style="color:blueviolet">
+        Welcome to CRUD operation tutorial by DotNet Techy
+        <br>
+        Front End- Angular7
+        <br>
+        Back  End- Web API
+        <br>
+        Cloud Hosting- Azure
+    </h1>
+
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Read
+                <button type="button" class="btn btn-warning" (click)="GetAllZones()">Get All Records</button>
+            </div>
+            <div class="card-body">
+
+                <table class="table table-bordered table-hover">
+                    <tr *ngFor="let rec of allZones">
+                        <td>{{rec.nomzone}}</td>
+                        <td>{{rec.couverture}}</td>
+                        <td>{{rec.population}}</td>
+                        <td>{{rec.cadastre}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success btn-sm" (click)="GetSelectedZones(rec)">Select</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Update
+            </div>
+            <div class="card-body">
+                <form [formGroup]="updateForm">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                                <input type="text" formControlName="nomzone" class="form-control" placeholder="Name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <input type="text" formControlName="couverture" class="form-control" placeholder="Email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>
+                                <input type="text" formControlName="population" class="form-control" placeholder="Phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>
+                                <input type="text" formControlName="cadastre" class="form-control" placeholder="Phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="button" class="btn btn-info" (click)="UpdateZon()">Update</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>
