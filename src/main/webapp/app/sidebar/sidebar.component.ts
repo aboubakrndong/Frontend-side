@@ -105,16 +105,18 @@ ConvertDataToPdf ()
 }
 
 ShareWithEmail() {
-    let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Your+Subject+here&body='+'https://github.com/aboubakrndong/projetfinetudes'+'&ui=2&tf=1&pli=1';
-    window.open(url, 'sharer', 'toolbar=0,status=0,width=648,height=395');
+      var msgbody=("NomZone:"+this.zone.nomzone+
+      "Couverture:"+this.zone.couverture+
+      "Population:"+this.zone.population+
+      "Cadastre:"+this.zone.cadastre)
+      let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Your+Subject+here&body=' + msgbody+ '&ui=2&tf=1&pli=1';
+      window.open(url, 'sharer', 'toolbar=0,status=0,width=648,height=395');
   }
 
-  ShareData() {
+  /*ShareData() {
     var myWindow = window.open("", "MsgWindow", "width=648,height=395");
+    myWindow.document.write("<HR><FORM><INPUT TYPE='button' VALUE='sharemail' onClick='window.close()'><input type='button' value ='envoy' OnClick='this.ShareWithEmail()'></FORM></HR>");
 
-    //myWindow.document.write("<HR><FORM><INPUT TYPE='button' VALUE='Close' onClick='window.close()'></FORM></HR>");
-     myWindow.document.write("<HR><FORM><INPUT TYPE='button' VALUE='sharemail' onClick='window.close()'><input type='button' value ='envoy' OnClick='this.ShareWithEmail()'></FORM></HR>");
-
-  }
+  }*/
 
 }

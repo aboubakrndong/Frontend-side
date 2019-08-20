@@ -1,11 +1,7 @@
-<!--
-
 <mgl-map class="mglmap"
-    [style]="'mapbox://styles/mapbox/streets-v9'"
+    [style]="style"
     [zoom]="[13]"
     [center]="[-17.4709569, 14.7117548]"
-
-
 >
     <mgl-popup
         [lngLat]="[-17.4709569, 14.7117548]"
@@ -15,18 +11,23 @@
 
     </mgl-popup>
 
-
     <mgl-control mglFullscreen></mgl-control>
     <mgl-control mglNavigation></mgl-control>
 
-
 </mgl-map>
--->
 
+<!--changer la vue-->
 
+<mat-radio-group [ngModel]="layerId" (ngModelChange)="changeStyle($event)">
+    <mat-label class="labelvue">  Choisir la vue : </mat-label>
+    <mat-radio-button value="basic">basic</mat-radio-button>
+    <mat-radio-button value="streets">streets</mat-radio-button>
+    <mat-radio-button value="satellite">satellite</mat-radio-button>
+</mat-radio-group>
+
+<!--fin code pour changer la vue-->
 
 <!--
-
 <div class="row">
     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>

@@ -11,6 +11,10 @@ import { LoginModalService, AccountService, Account } from 'app/core';
   styleUrls: ['home.scss']
 })
 export class HomeComponent implements OnInit {
+  layerId = 'basic';
+  style: string;
+
+
   account: Account;
   modalRef: NgbModalRef;
 
@@ -21,6 +25,9 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.changeStyle(this.layerId);
+
+
     this.accountService.identity().then((account: Account) => {
       this.account = account;
     });
@@ -42,4 +49,9 @@ export class HomeComponent implements OnInit {
   login() {
     this.modalRef = this.loginModalService.open();
   }
+
+  changeStyle(layerId: string) {
+    this.style = `mapbox://styles/mapbox/${layerId}-v9`;
+  }
+
 }

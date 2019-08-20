@@ -25,6 +25,7 @@ export interface PeriodicElement {
   styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent {
+
    listzone: IZones[];
    ELEMENT_DATA: PeriodicElement[];
    zone: IZones;
@@ -34,6 +35,7 @@ export class MainNavComponent {
    opened = false;
 
   constructor(private breakpointObserver: BreakpointObserver, private zoneService: ZonesService) {}
+
 
     ngOnInit(): void {
       this.listzone = new Array<IZones>();

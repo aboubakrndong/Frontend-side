@@ -29,7 +29,7 @@
 
 
 
-<!-- debut code du  side nav-->
+<!-- debut code du side nav-->
 
 <mat-sidenav-container class="sidenav-container">
 
@@ -94,48 +94,43 @@
                 </mat-table>-->
 
             </cdk-virtual-scroll-viewport>
-
-            <p></p>
-            <button (click)="deleteZone($event)"> supprimer </button>
-
-
-            <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
-                <fa-icon [icon]="'plus'"></fa-icon>
-                <span class="d-none d-md-inline">Creerzone</span>
-            </button>
-
-            <button [routerLink]="['/share']" class="btn btn-info btn-sm">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                <span class="d-none d-md-inline">editzone</span>
-            </button>
+                        <p></p>
+                      <!--  <button (click)="deleteZone($event)"> supprimer </button>
 
 
-            <button class="btn btn-success btn-sm"
-                (click)="ConvertDataToPdf()">
-                <fa-icon [icon]="'download'" ></fa-icon>
-                <span class="d-none d-md-inline">Telecharger</span>
-            </button>
+                        <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'plus'"></fa-icon>
+                            <span class="d-none d-md-inline">Creerzone</span>
+                        </button>
+
+                        <button [routerLink]="['/share']" class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">editzone</span>
+                        </button>
 
 
-            <button class="btn btn-outline-primary btn-sm"
-                    (click)="ShareData()">
-                <fa-icon [icon]="'envelope'" ></fa-icon>
-                <span class="d-none d-md-inline">Partager</span>
-            </button>
+                        <button class="btn btn-success btn-sm"
+                            (click)="ConvertDataToPdf()">
+                            <fa-icon [icon]="'download'" ></fa-icon>
+                            <span class="d-none d-md-inline">Telecharger</span>
+                        </button>-->
 
+                       <button class="btn btn-outline-danger btn-sm"
+                            (click)="ShareWithEmail()">
+                            <fa-icon [icon]="'envelope'" ></fa-icon>
+                            <span class="d-none d-md-inline">envoi mail</span>
+                       </button>
 
-            <button class="btn btn-outline-danger btn-sm"
-                    (click)="ShareWithEmail()">
-                <fa-icon [icon]="'envelope'" ></fa-icon>
-                <span class="d-none d-md-inline">envoi mailo</span>
-            </button>
-
+                <!--<button class="btn btn-outline-primary btn-sm"
+                        (click)="ShareData()">
+                    <fa-icon [icon]="'envelope'" ></fa-icon>
+                    <span class="d-none d-md-inline">Partager</span>
+                </button>-->
 
         </div>
         <!-- fin code tableau-->
 
     </mat-sidenav>
-
 
 
     <!-- fin code du side nav-->
