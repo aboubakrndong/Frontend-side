@@ -17,6 +17,15 @@ Bootstrap tweaks
   color:orangered;
 }
 
+.marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 60%;
+  cursor: pointer;
+}
+
 .mglmap {
   position: absolute;
   height: 800px;

@@ -4,6 +4,8 @@ import { JhiEventManager } from 'ng-jhipster';
 
 import { MainNavComponent } from 'app/main-nav/main-nav.component';
 import { LoginModalService, AccountService, Account } from 'app/core';
+import { MapMouseEvent, Map } from 'mapbox-gl';
+
 
 @Component({
   selector: 'jhi-home',
@@ -11,6 +13,7 @@ import { LoginModalService, AccountService, Account } from 'app/core';
   styleUrls: ['home.scss']
 })
 export class HomeComponent implements OnInit {
+
   layerId = 'basic';
   style: string;
 
@@ -50,8 +53,13 @@ export class HomeComponent implements OnInit {
     this.modalRef = this.loginModalService.open();
   }
 
+  //changer la vue
+
   changeStyle(layerId: string) {
     this.style = `mapbox://styles/mapbox/${layerId}-v9`;
   }
+
+  //fin changer la vue
+
 
 }
