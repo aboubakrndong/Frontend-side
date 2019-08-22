@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+
+<h1 mat-dialog-title>Partager les infos</h1>
+<div mat-dialog-content>
+    <p>Via: </p>
+
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-outline-danger btn-sm"
+            (click)="ShareWithEmail()">
+        <div style="font-size: 24px; margin-left: 15px; margin-right: 15px">
+            <i class="fa fa-envelope fa-3x"></i></div>
+        <span class="d-none d-md-inline"> mail</span>
+    </button>       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <button class="btn btn-outline-info btn-sm"
+                        (click)="ShareWithSkype()">
+                           <div style="font-size: 24px; margin-left: 15px ; margin-right: 15px">
+                          <i class="fa fa-skype fa-3x"></i></div>
+                            <span class="d-none d-md-inline"> skype</span>
+                 </button>
+</div>

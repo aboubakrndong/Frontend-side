@@ -21,7 +21,7 @@ import * as moment from 'moment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
 import { MatButtonModule, MatSort } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -78,7 +78,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { CreatezoneComponent } from './createzone/createzone.component';
-import { EditzoneComponent } from './editzone/editzone.component';
+import { PopupComponent } from './popup/popup.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -182,7 +182,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FooterComponent,
     SidebarComponent,
     CreatezoneComponent,
-    EditzoneComponent
+    PopupComponent,
+
 
   ],
   providers: [

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
 
 <!-- code de la barre de recherche -->
 
@@ -95,44 +97,34 @@
 
             </cdk-virtual-scroll-viewport>
                         <p></p>
-                      <!--  <button (click)="deleteZone($event)"> supprimer </button>
+<!--
+                     <button (click)="deleteZone($event)"> supprimer </button>
+-->
 
-
-                        <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
+                       <!-- <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'plus'"></fa-icon>
                             <span class="d-none d-md-inline">Creerzone</span>
                         </button>
 
-                        <button [routerLink]="['/share']" class="btn btn-info btn-sm">
+                        <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline">editzone</span>
-                        </button>
-
-
-                        <button class="btn btn-success btn-sm"
-                            (click)="ConvertDataToPdf()">
-                            <fa-icon [icon]="'download'" ></fa-icon>
-                            <span class="d-none d-md-inline">Telecharger</span>
                         </button>-->
 
-                       <button class="btn btn-outline-danger btn-sm"
-                            (click)="ShareWithEmail()">
-                            <fa-icon [icon]="'envelope'" ></fa-icon>
-                            <span class="d-none d-md-inline">envoi mail</span>
+
+                       <button class="btn btn-success btn-sm"
+                            (click)="ConvertDataToPdf()">
+                           <div>
+                               <i class="fa fa-download fa-2x"></i> </div>
+                            <span class="d-none d-md-inline">Telecharger</span>
+                        </button>
+
+                       <button class="btn btn-primary btn-sm"
+                            (click)="ShareData()">
+                          <div>
+                             <i class="fa fa-share-alt-square fa-2x"></i> </div>
+                           <span class="d-none d-md-inline">Partager</span>
                        </button>
-
-            <button class="btn btn-outline-info btn-sm"
-                    (click)="ShareWithSkype()">
-                <fa-icon [icon]="'skype'" ></fa-icon>
-                <span class="d-none d-md-inline">envoi skype</span>
-            </button>
-
-                <!--<button class="btn btn-outline-primary btn-sm"
-                        (click)="ShareData()">
-                    <fa-icon [icon]="'envelope'" ></fa-icon>
-                    <span class="d-none d-md-inline">Partager</span>
-                </button>-->
-
         </div>
         <!-- fin code tableau-->
 

@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import {CreatezoneComponent} from "app/createzone/createzone.component";
-import {EditzoneComponent} from "app/editzone/editzone.component";
+import {PopupComponent} from "app/popup/popup.component";
 import {MainNavComponent} from "app/main-nav/main-nav.component";
 
 
@@ -24,7 +24,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
         },
         {
           path: 'editzone',
-          component: EditzoneComponent
+          component: PopupComponent
         },
 
 

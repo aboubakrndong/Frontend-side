@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
+import { Component, OnInit} from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { ZonesService } from 'app/entities/zones';
 import { IZones } from 'app/shared/model/zones.model';
@@ -9,19 +6,14 @@ import { IQos } from 'app/shared/model/qos.model';
 import { IKpi } from 'app/shared/model/kpi.model';
 import { IBts } from 'app/shared/model/bts.model';
 
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faDownload} from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope} from "@fortawesome/free-solid-svg-icons";
-
-
-library.add(faDownload, faEnvelope);
-
+import {MatDialog} from '@angular/material/dialog';
 
 import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
 import * as html2canvas from "html2canvas"
+import {PopupComponent} from "app/popup/popup.component";
+
 
 export interface PeriodicElement {
   id?: number;
@@ -46,9 +38,9 @@ export class SidebarComponent implements OnInit {
   selectedValue: number;
   displayedColumns: string[] = ['nomzone', 'couverture', 'cadastre', 'population'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
-  opened = false;
 
-  constructor(private breakpointObserver: BreakpointObserver, private zoneService: ZonesService) {}
+
+  constructor(public dialog: MatDialog, private zoneService: ZonesService) {}
 
   ngOnInit(): void {
     this.listzone = new Array<IZones>();
@@ -76,9 +68,6 @@ export class SidebarComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     });
   }
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 
   deleteZone(event: any) {
     this.zoneService.delete(this.selectedValue).subscribe(zone=>{
@@ -105,31 +94,10 @@ ConvertDataToPdf ()
 
 }
 
-ShareWithEmail() {
-      var msgbody=("NomZone:"+this.zone.nomzone+
-      "Couverture:"+this.zone.couverture+
-      "Population:"+this.zone.population+
-      "Cadastre:"+this.zone.cadastre)
-      let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Your+Subject+here&body=' + msgbody+ '&ui=2&tf=1&pli=1';
-      window.open(url, 'sharer', 'status=0,toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=600');
+  ShareData() {
+    this.dialog.open(PopupComponent, {
+      width: '370px',
+    });
   }
-
-
-  ShareWithSkype() {
-    var msgbody=("NomZone:"+this.zone.nomzone+
-      "Couverture:"+this.zone.couverture+
-      "Population:"+this.zone.population+
-      "Cadastre:"+this.zone.cadastre)
-
-      let url = 'https://web.skype.com/';
-    window.open(url, 'sharer', 'toolbar=0,status=0,width=648,height=395');
-      }
-
-
-  /*ShareData() {
-    var myWindow = window.open("", "MsgWindow", "width=648,height=395");
-    myWindow.document.write("<HR><FORM><INPUT TYPE='button' VALUE='fermer' onClick='window.close()'><input type='button' value ='envoy' OnClick='this.ShareWithEmail()'></FORM></HR>");
-
-  }*/
 
 }
