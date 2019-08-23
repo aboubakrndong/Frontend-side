@@ -13,6 +13,7 @@ import 'jspdf-autotable';
 
 import * as html2canvas from "html2canvas"
 import {PopupComponent} from "app/popup/popup.component";
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 
 
 export interface PeriodicElement {
@@ -40,7 +41,7 @@ export class SidebarComponent implements OnInit {
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
 
-  constructor(public dialog: MatDialog, private zoneService: ZonesService) {}
+  constructor(public dialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.listzone = new Array<IZones>();
@@ -95,9 +96,8 @@ ConvertDataToPdf ()
 }
 
   ShareData() {
-    this.dialog.open(PopupComponent, {
-      width: '370px',
-    });
+    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal'});
+    modalRef.componentInstance.zone = this.zone;
   }
 
 }

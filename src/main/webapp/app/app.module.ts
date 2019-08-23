@@ -81,6 +81,7 @@ import { CreatezoneComponent } from './createzone/createzone.component';
 import { PopupComponent } from './popup/popup.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CreatealerteComponent } from './createalerte/createalerte.component';
 
 
 
@@ -183,6 +184,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     SidebarComponent,
     CreatezoneComponent,
     PopupComponent,
+    CreatealerteComponent,
 
 
   ],

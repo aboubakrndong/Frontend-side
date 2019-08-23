@@ -1,4 +1,4 @@
-<!--
+
 <mgl-map class="mglmap"
          [style]="style"
          [zoom]="[10]"
@@ -9,7 +9,7 @@
 
 
 
-&lt;!&ndash;Marker pour dakar &ndash;&gt;
+<!--Marker pour dakar -->
     <mgl-marker
         #myMarker
         [lngLat]="[-17.456724, 14.726945]"
@@ -26,10 +26,10 @@
     </mgl-popup>
 
 
-    &lt;!&ndash; fin Marker pour dakar &ndash;&gt;
+    <!-- fin Marker pour dakar -->
 
 
-    &lt;!&ndash;Marker pour rufisque &ndash;&gt;
+    <!--Marker pour rufisque -->
     <mgl-marker
         #myMarkerru
         [lngLat]="[ -17.2749633, 14.7172412]"
@@ -46,9 +46,9 @@
        <h3> Département de rufisque  !! </h3>
     </mgl-popup>
 
-    &lt;!&ndash; Fin Marker pour rufisque &ndash;&gt;
+    <!-- Fin Marker pour rufisque -->
 
-    &lt;!&ndash;Marker pour guediawaye &ndash;&gt;
+    <!--Marker pour guediawaye -->
 
     <mgl-marker
         #myMarkergue
@@ -65,9 +65,9 @@
         <h3>   Département de guediawaye  !! </h3>
     </mgl-popup>
 
-    &lt;!&ndash; fin Marker pour guediawaye &ndash;&gt;
+    <!-- fin Marker pour guediawaye -->
 
-    &lt;!&ndash; Marker Pour pikine &ndash;&gt;
+    <!-- Marker Pour pikine -->
 
     <mgl-marker
         #myMarkerpi
@@ -84,11 +84,11 @@
         <h3>  Département de pikine  !!</h3>
     </mgl-popup>
 
-    &lt;!&ndash;fin Marker pour pikine&ndash;&gt;
+    <!--fin Marker pour pikine-->
 
 </mgl-map>
 
-&lt;!&ndash;changer la vue&ndash;&gt;
+<!--changer la vue-->
 
 <mat-radio-group [ngModel]="layerId" (ngModelChange)="changeStyle($event)">
     <mat-label class="labelvue">  Choisir la vue : </mat-label>
@@ -97,5 +97,5 @@
     <mat-radio-button value="satellite">satellite</mat-radio-button>
 </mat-radio-group>
 
-&lt;!&ndash;fin code pour changer la vue&ndash;&gt;
--->
+<!--fin code pour changer la vue-->
+

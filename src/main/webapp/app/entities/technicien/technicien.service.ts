@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { ITechnicien } from 'app/shared/model/technicien.model';
+import {IZones} from "app/shared/model/zones.model";
 
 type EntityResponseType = HttpResponse<ITechnicien>;
 type EntityArrayResponseType = HttpResponse<ITechnicien[]>;
@@ -72,4 +73,13 @@ export class TechnicienService {
     }
     return res;
   }
+
+  // fonction findAll qui renvoie la liste des technicien
+
+  findAll(): Observable<EntityArrayResponseType> {
+    return this.http.get<ITechnicien[]>(`${this.resourceUrl}`, { observe: 'response' });
+  }
+
+  //fin de la fonction findAll
+
 }

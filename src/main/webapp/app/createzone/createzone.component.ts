@@ -17,14 +17,6 @@ export class CreatezoneComponent implements OnInit {
 
   constructor(private zoneService: ZonesService) { }
 
- /* getZone(){
-    this.listzone = new Array<IZones>();
-    this.zoneService.findAll().subscribe(liste => {
-      console.log(liste.body);
-      this.listzone = liste.body;
-    });
-  }*/
-
   ngOnInit() {
     this.userFormGroup = new FormGroup(
       {
@@ -34,18 +26,15 @@ export class CreatezoneComponent implements OnInit {
         population : new FormControl('')
       },
     );
-   // this.getZone();
   }
-
 
   addZone(){
-    this.zoneService.create(this.userFormGroup.value).subscribe(zone=>{
+      this.zoneService.create(this.userFormGroup.value).subscribe(zone=>{
       console.log(zone);
       this.zone= zone.body;
+      alert("zone créer avec succés");
 
     })
-   // this.getZone();
   }
-
 
 }

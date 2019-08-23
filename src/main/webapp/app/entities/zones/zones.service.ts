@@ -36,14 +36,13 @@ export class ZonesService {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
-  //je cree la fonction findAll qui renvoie la liste des zones
+  // fonction findAll qui renvoie la liste des zones
 
   findAll(): Observable<EntityArrayResponseType> {
     return this.http.get<IZones[]>(`${this.resourceUrl}`, { observe: 'response' });
   }
 
   //fin de la fonction findAll
-
 
 
   //fonction updatebyid

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { IBts } from 'app/shared/model/bts.model';
+import {IZones} from "app/shared/model/zones.model";
 
 type EntityResponseType = HttpResponse<IBts>;
 type EntityArrayResponseType = HttpResponse<IBts[]>;
@@ -35,4 +36,10 @@ export class BtsService {
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
+
+  findAll(): Observable<EntityArrayResponseType> {
+    return this.http.get<IBts[]>(`${this.resourceUrl}`, { observe: 'response' });
+  }
+
+
 }

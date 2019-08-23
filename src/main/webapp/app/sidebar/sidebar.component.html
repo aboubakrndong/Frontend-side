@@ -1,11 +1,24 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
 
-<!-- code de la barre de recherche -->
+<!-- code des symbole et bouton side bar -->
 
 <nav class="navbar navbar-expand-lg navbar-light btn-success">
-  <h4><span>Barre de recherche</span></h4>
 
+    <!-- debut code symbole sidebar  -->
+
+    <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">swap_horizontal_circle
+        </mat-icon>
+    </button>
+    <!-- fin code symbole sidebar-->
+
+
+<!-- debut code bouton date et rechercher-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"> </ul>
 
@@ -24,14 +37,15 @@
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Rechercher </button>
 
     </div>
+    <!-- fin code bouton date et rechercher-->
 </nav>
 
 
-<!-- fin du code de la barre de recherche-->
+<!-- fin code des symbole et bouton side bar -->
 
 
 
-<!-- debut code du side nav-->
+<!-- debut code afficher infos sur le side nav-->
 
 <mat-sidenav-container class="sidenav-container">
 
@@ -66,50 +80,21 @@
                     </li>
                 </ul>
                 </table>
-
-
-                <!--<mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="classtable">
-                    &lt;!&ndash; Propriete Column &ndash;&gt;
-                    <ng-container matColumnDef="nomzone"  >
-                        <mat-header-cell *matHeaderCellDef> Nom Zone </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{zone.nomzone}} </mat-cell>
-                    </ng-container>
-
-                    &lt;!&ndash; valeur Column &ndash;&gt;
-                    <ng-container matColumnDef="population">
-                        <mat-header- *matHeaderCellDef> Populations </mat-header->
-                        <mat-cell *matCellDef="let element"> {{zone.population}} </mat-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="cadastre">
-                        <mat-header-cell *matHeaderCellDef> Cadastre </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{zone.cadastre}} </mat-cell>
-                    </ng-container>
-
-                    <ng-container matColumnDef="couverture">
-                        <mat-header-cell *matHeaderCellDef> Couverture </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{zone.couverture}} </mat-cell>
-                    </ng-container>
-
-                    <mat-header-row *matHeaderRowDef="displayedColumns ; sticky: true"></mat-header-row>
-                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                </mat-table>-->
-
             </cdk-virtual-scroll-viewport>
                         <p></p>
 <!--
                      <button (click)="deleteZone($event)"> supprimer </button>
--->
 
-                       <!-- <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
+
+                       <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'plus'"></fa-icon>
                             <span class="d-none d-md-inline">Creerzone</span>
-                        </button>
+                        </button> -->
 
-                        <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline">editzone</span>
-                        </button>-->
+            <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                <span class="d-none d-md-inline">editzone</span>
+            </button>
 
 
                        <button class="btn btn-success btn-sm"
@@ -125,33 +110,18 @@
                              <i class="fa fa-share-alt-square fa-2x"></i> </div>
                            <span class="d-none d-md-inline">Partager</span>
                        </button>
+
+            <div style="margin-top: 135px"> <button [routerLink]="['/createalerte']" class="btn btn-primary btn-sm">
+                <fa-icon [icon]="'plus'"></fa-icon>
+                <span class="d-none d-md-inline">CreerAlertes</span>
+            </button> </div>
+
         </div>
         <!-- fin code tableau-->
-
     </mat-sidenav>
 
 
-    <!-- fin code du side nav-->
-
-
-    <!-- debut code 2eme bar de menu -->
-    <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <button
-                type="button"
-                aria-label="Toggle sidenav"
-                mat-icon-button
-                (click)="drawer.toggle()">
-                <mat-icon aria-label="Side nav toggle icon">swap_horizontal_circle
-                </mat-icon>
-            </button>
-            <span>Appli Atos</span>
-        </mat-toolbar>
-        <!-- Add Content Here -->
-        <ng-content></ng-content>
-    </mat-sidenav-content>
-
-    <!-- fin bar de menu-->
+    <!-- fin code afficher infos sur le side nav-->
 
 </mat-sidenav-container>
 
